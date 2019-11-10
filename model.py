@@ -45,5 +45,3 @@ print(round(gbr.score(x_test, y_test) * 100), '%')
 
 # Use joblib library to save trained model for later use
 dump(gbr, 'gbr.joblib')
-
-
