@@ -1,166 +1,159 @@
-<!DOCTYPE html>
-<html lang="en-US">
+{%  extends 'layout.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Monroe County Home Sales</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% block body %}
 
-     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
+<div class="container">
+    <form action="/result" method="POST">
 
-<body>
-    <div class="jumbotron">
-        <h1 class="display-4">Monroe County Home Sale Price Predictor</h1>
-        <hr class="my-4">
-        <p>Enter the below about your home in Monroe County to receive a predicted sale price for you home. Click
-        "About" below for more info.</p>
-    </div>
-    <div class="container">
+    <fieldset id="basic-home-info">
+        <legend class="legend-header">Basic Home Information</legend>
         <div class="row">
-            <div class="col">
-                <form action="/prediction" method="POST">
-                    <div class="form-group">
-                        <label for="year-built">Year Built</label>
-                        <input type="text" class="form-control" id="year-built" name="year-built" placeholder="Enter the year built">
-                    </div>
+            <div class="form-group col-lg-4">
+                <label for="year-built">Year Built</label>
+                <input type="number" class="form-control" id="year-built" name="year-built" placeholder="Enter the year built" required>
+            </div>
 
-                    <div class="form-group">
-                        <label for="floor-area">Floor Area</label>
-                        <input type="text" class="form-control" id="floor" name="floor" placeholder="Enter total sq footage">
-                    </div>
+            <div class="form-group col-lg-4">
+                <label for="floor-area">Floor Area</label>
+                <input type="number" class="form-control" id="floor" name="floor" placeholder="Enter total sq footage" required>
+            </div>
 
-                    <div class="form-group">
-                        <label for="acres">Acres of Land</label>
-                        <input type="text" class="form-control" id="acres" name="acres" placeholder="Enter total acres of land">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="munipilaity">Municipality</label>
-                        <select class="form-control" id="municipality" name="municipality">
-                            <option value="0">Brighton</option>
-                            <option value="1">Brockport</option>
-                            <option value="2">Chili</option>
-                            <option value="3">Churchville</option>
-                            <option value="4">Clarkson</option>
-                            <option value="5">East Rochester</option>
-                            <option value="6">Fairport</option>
-                            <option value="7">Gates</option>
-                            <option value="8">Greece</option>
-                            <option value="9">Hamlin</option>
-                            <option value="10">Henrietta</option>
-                            <option value="11">Hilton</option>
-                            <option value="12">Honeoye Falls</option>
-                            <option value="13">Irondequoit</option>
-                            <option value="14">Mendon</option>
-                            <option value="15">Ogden</option>
-                            <option value="16">Parma</option>
-                            <option value="17">Penfield</option>
-                            <option value="18">Perinton</option>
-                            <option value="19">Pittsford</option>
-                            <option value="20">Riga</option>
-                            <option value="21">Rush</option>
-                            <option value="22">Scottsville</option>
-                            <option value="23">Spencerport</option>
-                            <option value="24">Sweden</option>
-                            <option value="25">Webster</option>
-                            <option value="26">Wheatland</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="school">School District</label>
-                        <select class="form-control" id="school" name="school">
-                            <option value="0">Avon</option>
-                            <option value="1">Brighton Central</option>
-                            <option value="2">Brockport Central</option>
-                            <option value="3">Byron Bergen</option>
-                            <option value="4">Caledonia Mumford</option>
-                            <option value="5">Churchville Chili</option>
-                            <option value="6">E Irondequoit Central</option>
-                            <option value="7">East Roch Union Free</option>
-                            <option value="8">Fairport Central</option>
-                            <option value="9">Gates Chili Central</option>
-                            <option value="10">Greece Central</option>
-                            <option value="11">Hilton Central</option>
-                            <option value="12">Honeoye Falls Lima</option>
-                            <option value="13">Kendall Central</option>
-                            <option value="14">Penfield Central</option>
-                            <option value="15">Pittsford Central</option>
-                            <option value="16">Rush Henrietta Cent</option>
-                            <option value="17">Spencerport Central</option>
-                            <option value="18">Victor Central</option>
-                            <option value="19">W Irondequoit Central</option>
-                            <option value="20">Wayne Central</option>
-                            <option value="21">Webster Central</option>
-                            <option value="22">Wheatland Chili</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="bedrooms">Number of Bedrooms</label>
-                        <select class="form-control" id="bedrooms" name="bedrooms">
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="bathrooms">Number of Bathrooms</label>
-                        <select class="form-control" id="bathrooms" name="bathrooms">
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="half-baths">Number of Half Bathrooms</label>
-                        <select class="form-control" id="half-baths" name="half-baths">
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-                <br>
-                <h1> {{ prediction }}</h1>
+            <div class="form-group col-lg-4">
+                <label for="acres">Acres of Land</label>
+                <input type="number" class="form-control" id="acres" name="acres" placeholder="Enter total acres of land" required>
             </div>
         </div>
-    </div>
+    </fieldset>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
-</html>
+    <fieldset id="number-of-rooms">
+        <legend class="legend-header">Number of Rooms</legend>
+        <div class="row">
+            <div class="form-group col-lg-4">
+                <label for="bedrooms">Number of Bedrooms</label>
+                <select class="form-control" id="bedrooms" name="bedrooms">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+
+            <div class="form-group col-lg-4">
+                <label for="bathrooms">Number of Bathrooms</label>
+                <select class="form-control" id="bathrooms" name="bathrooms">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+
+            <div class="form-group col-lg-4">
+                <label for="half-baths">Number of Half Bathrooms</label>
+                <select class="form-control" id="half-baths" name="half-baths">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset id="location-info">
+        <legend class="legend-header">Location Information</legend>
+        <div class="row">
+            <div class="form-group col-lg-6">
+                <label for="munipilaity">Municipality</label>
+                <select class="form-control" id="municipality" name="municipality" required>
+                    <option disabled value="">Municipality</option>
+                    <option value="0">Brighton</option>
+                    <option value="1">Brockport</option>
+                    <option value="2">Chili</option>
+                    <option value="3">Churchville</option>
+                    <option value="4">Clarkson</option>
+                    <option value="5">East Rochester</option>
+                    <option value="6">Fairport</option>
+                    <option value="7">Gates</option>
+                    <option value="8">Greece</option>
+                    <option value="9">Hamlin</option>
+                    <option value="10">Henrietta</option>
+                    <option value="11">Hilton</option>
+                    <option value="12">Honeoye Falls</option>
+                    <option value="13">Irondequoit</option>
+                    <option value="14">Mendon</option>
+                    <option value="15">Ogden</option>
+                    <option value="16">Parma</option>
+                    <option value="17">Penfield</option>
+                    <option value="18">Perinton</option>
+                    <option value="19">Pittsford</option>
+                    <option value="20">Riga</option>
+                    <option value="21">Rush</option>
+                    <option value="22">Scottsville</option>
+                    <option value="23">Spencerport</option>
+                    <option value="24">Sweden</option>
+                    <option value="25">Webster</option>
+                    <option value="26">Wheatland</option>
+                </select>
+            </div>
+
+            <div class="form-group col-lg-6">
+                <label for="school">School District</label>
+                <select class="form-control" id="school" name="school" required>
+                    <option disabled value="">School</option>
+                    <option value="0">Avon</option>
+                    <option value="1">Brighton Central</option>
+                    <option value="2">Brockport Central</option>
+                    <option value="3">Byron Bergen</option>
+                    <option value="4">Caledonia Mumford</option>
+                    <option value="5">Churchville Chili</option>
+                    <option value="6">E Irondequoit Central</option>
+                    <option value="7">East Roch Union Free</option>
+                    <option value="8">Fairport Central</option>
+                    <option value="9">Gates Chili Central</option>
+                    <option value="10">Greece Central</option>
+                    <option value="11">Hilton Central</option>
+                    <option value="12">Honeoye Falls Lima</option>
+                    <option value="13">Kendall Central</option>
+                    <option value="14">Penfield Central</option>
+                    <option value="15">Pittsford Central</option>
+                    <option value="16">Rush Henrietta Cent</option>
+                    <option value="17">Spencerport Central</option>
+                    <option value="18">Victor Central</option>
+                    <option value="19">W Irondequoit Central</option>
+                    <option value="20">Wayne Central</option>
+                    <option value="21">Webster Central</option>
+                    <option value="22">Wheatland Chili</option>
+                </select>
+            </div>
+        </div>
+    </fieldset>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+</div>
+
+{% endblock %}
+

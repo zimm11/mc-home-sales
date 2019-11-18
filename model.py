@@ -31,7 +31,7 @@ data = data.dropna()
 
 # Set the x values and y value (dependent variable)
 target = data['Sale Price']
-data2 = data[['Year Built', 'Floor Area', 'Acres', 'Municipality', 'School Name', '# Bedrooms', '# Bathrooms', '# Half Bathrooms']].copy()
+data2 = data[['Year Built', 'Floor Area', 'Acres', '# Bedrooms', '# Bathrooms', '# Half Bathrooms', 'Municipality', 'School Name']].copy()
 
 # Split the data into training and testing values
 x_train, x_test, y_train, y_test = train_test_split(data2, target, test_size=0.10, random_state=2)

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from joblib import load
 import numpy as np
 
@@ -7,9 +7,17 @@ app = Flask(__name__)
 
 @app.route('/')
 @app.route('/index')
-
 def index():
     return render_template('index.html')
+
+
+@app.route('/result', methods=['POST'])
+def result():
+    prediction_list = request.form.to_dict()
+    prediction_list = list(prediction_list.values())
+    predicted_sale_price = ('{:,}'.format(round(prediction(prediction_list), 2)))
+    return redirect(url_for('predicted_result', predicted_sale_price=predicted_sale_price))
+
 
 def prediction(prediction_list):
     prediction_values = np.array(prediction_list).reshape((1, -1))
@@ -18,15 +26,22 @@ def prediction(prediction_list):
     return sale_price[0]
 
 
-@app.route('/prediction', methods=['POST'])
-def result():
-    if request.method == 'POST':
-        prediction_list = request.form.to_dict()
-        prediction_list = list(prediction_list.values())
-        prediction_list = list(map(int, prediction_list))
-        sale_price = prediction(prediction_list)
+@app.route('/predicted_result')
+def predicted_result():
+    return render_template('prediction.html', predicted_sale_price=request.args.get('predicted_sale_price'))
 
-        return render_template("index.html", prediction=sale_price)
+@app.route('/jupyter')
+def jupyter():
+    return render_template('jupyter-nb.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/sources')
+def sources():
+    return render_template('sources.html')
+
 
 if __name__ == '__main__':
     app.run()
