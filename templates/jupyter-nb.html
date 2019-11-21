@@ -13077,8 +13077,12 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Monroe-County-Housing-Data---Sale-Price-Prediction-Project">Monroe County Housing Data - Sale Price Prediction Project<a class="anchor-link" href="#Monroe-County-Housing-Data---Sale-Price-Prediction-Project">&#182;</a></h2><h2 id="Author:-Chris-Zimmerman">Author: Chris Zimmerman<a class="anchor-link" href="#Author:-Chris-Zimmerman">&#182;</a></h2><p>Python project analyzing Monroe County Home sales over the last 3 year period. CSV files of home sale data pulled from Monroe County Real Property Portal at <a href="https://www.monroecounty.gov/etc/rp/search2.php">https://www.monroecounty.gov/etc/rp/search2.php</a>. Utilizes the Pandas, Matplotlib, and Numpy libraries to analyze and clean the data.</p>
-<p>The goal of the project is to utilize a machine learning library (scikit-learn) to create a model to predict home sale price based on the details and specifications of the home with at least 70% accuracy. After meeting this benchmark the model will be implemented into a web interface using the Flask framework so a user can receive a prediction for the sale price of their home. Project is in progress.</p>
+<h2 id="Monroe-County-Housing-Data---Sale-Price-Prediction-Project">Monroe County Housing Data - Sale Price Prediction Project<a class="anchor-link" href="#Monroe-County-Housing-Data---Sale-Price-Prediction-Project">&#182;</a></h2><h2 id="Author:-Chris-Zimmerman">Author: Chris Zimmerman<a class="anchor-link" href="#Author:-Chris-Zimmerman">&#182;</a></h2><p>Python project analyzing Monroe County Home sales over the last 3 year period. CSV files of home sale data
+pulled from Monroe County Real Property Portal. Utilizes the Pandas, Matplotlib, and Numpy libraries to analyze and clean the data.</p>
+<p>The project utilizes a machine learning library (scikit-learn) to create a model to predict
+home sale price based on the details and specifications of the home with 82% accuracy.  The model has been
+implemented into a web interface using the Flask micro-framework so a user can receive a prediction for the sale price of their home based on their personal inputs.</p>
+<p>Project completed by Christopher Zimmerman - Computer Information Systems student at Buffalo State College.</p>
 
 </div>
 </div>
@@ -14530,8 +14534,8 @@ Standard deviation of prices: $200457.93
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">target</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Sale Price&#39;</span><span class="p">]</span>
-<span class="n">data2</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;Year Built&#39;</span><span class="p">,</span> <span class="s1">&#39;Floor Area&#39;</span><span class="p">,</span> <span class="s1">&#39;Acres&#39;</span><span class="p">,</span> <span class="s1">&#39;Municipality&#39;</span><span class="p">,</span> <span class="s1">&#39;School Name&#39;</span><span class="p">,</span> 
-             <span class="s1">&#39;# Bedrooms&#39;</span><span class="p">,</span> <span class="s1">&#39;# Bathrooms&#39;</span><span class="p">,</span> <span class="s1">&#39;# Half Bathrooms&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> 
+<span class="n">data2</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;Year Built&#39;</span><span class="p">,</span> <span class="s1">&#39;Floor Area&#39;</span><span class="p">,</span> <span class="s1">&#39;Acres&#39;</span><span class="p">,</span> <span class="s1">&#39;Total Assessed Value&#39;</span><span class="p">,</span> <span class="s1">&#39;Municipality&#39;</span><span class="p">,</span> <span class="s1">&#39;School Name&#39;</span><span class="p">,</span> 
+              <span class="s1">&#39;# Bedrooms&#39;</span><span class="p">,</span> <span class="s1">&#39;# Bathrooms&#39;</span><span class="p">,</span> <span class="s1">&#39;# Half Bathrooms&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> 
 </pre></div>
 
     </div>
@@ -14575,7 +14579,7 @@ Standard deviation of prices: $200457.93
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2 id="Linear-Regression-">Linear Regression <a class="anchor-link" href="#Linear-Regression-">&#182;</a></h2><p>Accuracy: 60.75%</p>
+<h2 id="Linear-Regression-">Linear Regression <a class="anchor-link" href="#Linear-Regression-">&#182;</a></h2><p>Accuracy: 77.7%</p>
 
 </div>
 </div>
@@ -14607,7 +14611,7 @@ Standard deviation of prices: $200457.93
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0.602255917180527
+<pre>0.7772001142635484
 </pre>
 </div>
 </div>
@@ -14620,7 +14624,7 @@ Standard deviation of prices: $200457.93
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2 id="Gradient-Boosting-Regressor">Gradient Boosting Regressor<a class="anchor-link" href="#Gradient-Boosting-Regressor">&#182;</a></h2><p>Accuracy: 70.68%</p>
+<h2 id="Gradient-Boosting-Regressor">Gradient Boosting Regressor<a class="anchor-link" href="#Gradient-Boosting-Regressor">&#182;</a></h2><p>Accuracy: 81.55%</p>
 
 </div>
 </div>
@@ -14652,7 +14656,7 @@ Standard deviation of prices: $200457.93
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0.7068313610550973
+<pre>0.8159897006932461
 </pre>
 </div>
 </div>
@@ -14684,8 +14688,8 @@ Standard deviation of prices: $200457.93
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>predicted response: [217794.87602727  94847.93137929 256755.34578993 ... 137247.84354234
- 274294.2774258  211737.00974683]
+<pre>predicted response: [181859.70824833  88851.26716128 238733.72885051 ... 147607.16532796
+ 295005.2265889  209227.1240853 ]
 </pre>
 </div>
 </div>
@@ -14699,10 +14703,9 @@ Standard deviation of prices: $200457.93
 <div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># [&#39;Year Built&#39;, &#39;Floor Area&#39;, &#39;Total Assessed Value&#39;, &#39;Acres&#39;, &#39;Municipality&#39;, &#39;School Name&#39;, </span>
-<span class="c1">#             &#39;# Bedrooms&#39;, &#39;# Bathrooms&#39;, &#39;# Half Bathrooms&#39;]</span>
-
-<span class="n">x_new_input</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1970</span><span class="p">,</span> <span class="mi">1700</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># [&#39;Year Built&#39;, &#39;Floor Area&#39;, &#39;Acres&#39;, &#39;Total Assessed Value&#39;, &#39;Municipality&#39;, &#39;School Name&#39;, </span>
+<span class="c1">#              &#39;# Bedrooms&#39;, &#39;# Bathrooms&#39;, &#39;# Half Bathrooms&#39;]</span>
+<span class="n">x_new_input</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1970</span><span class="p">,</span> <span class="mi">1700</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">200000</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
 
 <span class="n">y_new</span> <span class="o">=</span> <span class="n">gbr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_new_input</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">y_new</span><span class="p">)</span>
@@ -14722,7 +14725,7 @@ Standard deviation of prices: $200457.93
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[130588.47117615]
+<pre>[200975.13660712]
 </pre>
 </div>
 </div>
@@ -14735,7 +14738,7 @@ Standard deviation of prices: $200457.93
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2 id="Random-Forrest-Regressor">Random Forrest Regressor<a class="anchor-link" href="#Random-Forrest-Regressor">&#182;</a></h2><p>Accuracy: 66.95%</p>
+<h2 id="Random-Forrest-Regressor">Random Forrest Regressor<a class="anchor-link" href="#Random-Forrest-Regressor">&#182;</a></h2><p>Accuracy: 70.91%</p>
 
 </div>
 </div>
@@ -14783,7 +14786,7 @@ Standard deviation of prices: $200457.93
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0.6695067054096344
+<pre>-0.7091366121832969
 </pre>
 </div>
 </div>
@@ -14796,7 +14799,7 @@ Standard deviation of prices: $200457.93
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2 id="Decision-Tree-Regressor">Decision Tree Regressor<a class="anchor-link" href="#Decision-Tree-Regressor">&#182;</a></h2><p>Accuracy: 37.64%</p>
+<h2 id="Decision-Tree-Regressor">Decision Tree Regressor<a class="anchor-link" href="#Decision-Tree-Regressor">&#182;</a></h2><p>Accuracy: 59.70%</p>
 
 </div>
 </div>
@@ -14828,7 +14831,7 @@ Standard deviation of prices: $200457.93
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>35.20473163337922
+<pre>59.62765191069385
 </pre>
 </div>
 </div>
@@ -14841,7 +14844,7 @@ Standard deviation of prices: $200457.93
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2 id="XGBoost-Regressor">XGBoost Regressor<a class="anchor-link" href="#XGBoost-Regressor">&#182;</a></h2><p>Accuracy: 70.398%</p>
+<h2 id="XGBoost-Regressor">XGBoost Regressor<a class="anchor-link" href="#XGBoost-Regressor">&#182;</a></h2><p>Accuracy: 80.67%</p>
 
 </div>
 </div>
@@ -14874,8 +14877,8 @@ Standard deviation of prices: $200457.93
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[18:24:41] WARNING: src/objective/regression_obj.cu:152: reg:linear is now deprecated in favor of reg:squarederror.
-0.7039818607910546
+<pre>[14:40:53] WARNING: src/objective/regression_obj.cu:152: reg:linear is now deprecated in favor of reg:squarederror.
+0.8067101409261384
 </pre>
 </div>
 </div>
@@ -14897,7 +14900,7 @@ Standard deviation of prices: $200457.93
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2 id="Decision-Tree-Classifier">Decision Tree Classifier<a class="anchor-link" href="#Decision-Tree-Classifier">&#182;</a></h2><p>Accuracy: 1.89%</p>
+<h2 id="Decision-Tree-Classifier">Decision Tree Classifier<a class="anchor-link" href="#Decision-Tree-Classifier">&#182;</a></h2><p>Accuracy: 2.80%</p>
 
 </div>
 </div>
@@ -14929,7 +14932,7 @@ Standard deviation of prices: $200457.93
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0.018942383583267563
+<pre>0.028018942383583267
 </pre>
 </div>
 </div>
@@ -14942,7 +14945,7 @@ Standard deviation of prices: $200457.93
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2 id="Random-Forrest-Classifier">Random Forrest Classifier<a class="anchor-link" href="#Random-Forrest-Classifier">&#182;</a></h2><p>Accuracy: 4.85%</p>
+<h2 id="Random-Forrest-Classifier">Random Forrest Classifier<a class="anchor-link" href="#Random-Forrest-Classifier">&#182;</a></h2><p>Accuracy: 7.455%</p>
 
 </div>
 </div>
@@ -14975,7 +14978,7 @@ Standard deviation of prices: $200457.93
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.04696132596685083</pre>
+<pre>0.07458563535911603</pre>
 </div>
 
 </div>
@@ -15019,7 +15022,7 @@ Standard deviation of prices: $200457.93
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0.006314127861089187
+<pre>0.006708760852407261
 </pre>
 </div>
 </div>
@@ -15032,7 +15035,7 @@ Standard deviation of prices: $200457.93
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2 id="KNeighbors">KNeighbors<a class="anchor-link" href="#KNeighbors">&#182;</a></h2><p>Accuracy: 2.29%</p>
+<h2 id="KNeighbors">KNeighbors<a class="anchor-link" href="#KNeighbors">&#182;</a></h2><p>Accuracy: 2.99%</p>
 
 </div>
 </div>
@@ -15064,7 +15067,7 @@ Standard deviation of prices: $200457.93
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0.027624309392265192
+<pre>0.02999210734017364
 </pre>
 </div>
 </div>

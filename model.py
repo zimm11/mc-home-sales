@@ -31,13 +31,13 @@ data = data.dropna()
 
 # Set the x values and y value (dependent variable)
 target = data['Sale Price']
-data2 = data[['Year Built', 'Floor Area', 'Acres', '# Bedrooms', '# Bathrooms', '# Half Bathrooms', 'Municipality', 'School Name']].copy()
+data2 = data[['Year Built', 'Floor Area', 'Acres', 'Total Assessed Value', 'Municipality', 'School Name', '# Bedrooms', '# Bathrooms', '# Half Bathrooms']].copy()
 
 # Split the data into training and testing values
 x_train, x_test, y_train, y_test = train_test_split(data2, target, test_size=0.10, random_state=2)
 
 # Utilize the GBR model on the dataset, most accurate model per Jupyter testing
-gbr = ensemble.GradientBoostingRegressor(learning_rate=0.1, n_estimators=100, max_depth=4)
+gbr = ensemble.GradientBoostingRegressor()
 gbr.fit(x_train, y_train)
 
 # Print the accuracy of the model

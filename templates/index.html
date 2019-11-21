@@ -8,75 +8,29 @@
     <fieldset id="basic-home-info">
         <legend class="legend-header">Basic Home Information</legend>
         <div class="row">
-            <div class="form-group col-lg-4">
+            <div class="form-group col-lg-6">
                 <label for="year-built">Year Built</label>
                 <input type="number" class="form-control" id="year-built" name="year-built" placeholder="Enter the year built" required>
             </div>
 
-            <div class="form-group col-lg-4">
+            <div class="form-group col-lg-6">
                 <label for="floor-area">Floor Area</label>
                 <input type="number" class="form-control" id="floor" name="floor" placeholder="Enter total sq footage" required>
             </div>
+        </div>
 
-            <div class="form-group col-lg-4">
+        <div class="row">
+            <div class="form-group col-lg-6">
                 <label for="acres">Acres of Land</label>
                 <input type="number" class="form-control" id="acres" name="acres" placeholder="Enter total acres of land" required>
             </div>
-        </div>
-    </fieldset>
-
-    <fieldset id="number-of-rooms">
-        <legend class="legend-header">Number of Rooms</legend>
-        <div class="row">
-            <div class="form-group col-lg-4">
-                <label for="bedrooms">Number of Bedrooms</label>
-                <select class="form-control" id="bedrooms" name="bedrooms">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select>
-            </div>
-
-            <div class="form-group col-lg-4">
-                <label for="bathrooms">Number of Bathrooms</label>
-                <select class="form-control" id="bathrooms" name="bathrooms">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select>
-            </div>
-
-            <div class="form-group col-lg-4">
-                <label for="half-baths">Number of Half Bathrooms</label>
-                <select class="form-control" id="half-baths" name="half-baths">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select>
+            <div class="form-group col-lg-6">
+                <label for="assessed">Total Assessed Value</label>
+                <input type="number" class="form-control" id="asessed" name="assessed" placeholder="Enter total assessed value" required>
+                <small id="emailHelpBlock" class="form-text text-muted">
+                    Please visit <a href="https://www.monroecounty.gov/etc/rp/search.php" target="_blank">Monroe County Real Property Portal</a>
+                    for tax assessments values.
+                </small>
             </div>
         </div>
     </fieldset>
@@ -145,6 +99,62 @@
                     <option value="20">Wayne Central</option>
                     <option value="21">Webster Central</option>
                     <option value="22">Wheatland Chili</option>
+                </select>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset id="number-of-rooms">
+        <legend class="legend-header">Number of Rooms</legend>
+        <div class="row">
+            <div class="form-group col-lg-4">
+                <label for="bedrooms">Number of Bedrooms</label>
+                <select class="form-control" id="bedrooms" name="bedrooms">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+
+            <div class="form-group col-lg-4">
+                <label for="bathrooms">Number of Bathrooms</label>
+                <select class="form-control" id="bathrooms" name="bathrooms">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+
+            <div class="form-group col-lg-4">
+                <label for="half-baths">Number of Half Bathrooms</label>
+                <select class="form-control" id="half-baths" name="half-baths">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
                 </select>
             </div>
         </div>
