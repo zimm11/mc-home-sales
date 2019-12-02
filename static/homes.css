@@ -42,6 +42,11 @@ fieldset {
     font-weight: bold;
 }
 
+#back-btn {
+    position: fixed;
+    bottom: 10%;
+}
+
 footer {
     color: #9d9d9d;
     margin-top: 2%;
